@@ -58,6 +58,15 @@ public class WordGraphTest {
 		assertEquals(4, this.wordGraph.getWordChain(fromword, toword).size());
 
 	}
+	@Test
+	public void shouldTestGetWordChainForAnotherSet() throws IOException {
+		String toword = "peek";
+		String fromword = "load";
+		this.wordGraph.populateWordGraph(fromword, toword);
+		assertFalse(this.wordGraph.getWordChain(fromword, toword).isEmpty());
+		assertEquals(5, this.wordGraph.getWordChain(fromword, toword).size());
+
+	}
 
 	@Test
 	public void shouldTestGetWordChainWhenChainNotFound() throws IOException {
